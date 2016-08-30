@@ -90,7 +90,7 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
   fi
 
-source ~/.git-prompt.sh
+source ~/.bash/git-prompt.sh
 
 ########## Aliases ###################
 
