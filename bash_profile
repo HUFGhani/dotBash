@@ -71,7 +71,6 @@ elif [ $OS == LINUX ]; then
 export LS_COLORS=di=1;32:ln=35:so=36:pi=33:ex=1;31:bd=34;46:cd=35;43:su=32;47:sg=30;46:tw=30;42:ow=30;43
 fi
 
-# Custom bash prompts
 # Custom bash prompt via kirsle.net/wizards/ps1.html
 #export PS1="\[$(tput setaf 3)\]\[$(tput bold)\]\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\w\[$(tput setaf 1)\]\[$(tput bold)\]\[$(tput setaf 2)\]\$(__git_ps1)\[$(tput setaf 7)\]\n-->\[$(tput setaf 3)\]"
 
