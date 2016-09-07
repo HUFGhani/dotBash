@@ -97,13 +97,6 @@ source ~/.bash/git-prompt.sh
 ########## Aliases ###################
 
 # Shell Aliases
-if [ $OS == LINUX ]; then
-    alias ls='ls -lh --color'
-    alias la='ls -lha --color'
-elif [ $OS == MAC ]; then
-    alias ls='ls -lh'
-    alias la='ls -lha'
-fi
 
 # Unzipping *everything*
 function extract () {
