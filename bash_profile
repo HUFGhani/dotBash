@@ -31,6 +31,10 @@ function setjdk() {
   export PATH=$(echo $PATH | sed -E -e "s;:$1;;" -e "s;$1:?;;")
  }
 
+ function javaV() {
+   java -version
+ }
+
  #cleanupDS:  Recursively delete .DS_Store files
  alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
 
@@ -118,6 +122,11 @@ function extract () {
          echo "'$1' is not a valid file"
      fi
 }
+######### Directory Aliases #########
+alias down="cd ~/Downloads";
+alias desk="cd ~/Desktop"
+alias ~="cd ~"
+
 
 ######### Iterm2 shell intergration ####
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
