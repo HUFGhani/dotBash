@@ -89,6 +89,8 @@ alias pi='ssh pi@192.168.0.19'
 
 alias home='ssh pi@raspberrypi2014.x64.me'
 
+alias sbox='ssh -p2222 hamza@sandbox.dev'
+
 ########### git ######################
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
