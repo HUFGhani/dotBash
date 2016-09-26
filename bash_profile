@@ -45,11 +45,17 @@ function setjdk() {
  alias finderHideHidden='defaults write com.apple.finder ShowAllFiles FALSE'
 
  #lock
- if [ $OS == MAC ]; then
- alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
+if [ $OS == MAC ]; then
+   alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
  elif [ $OS == LINUX ]; then
+   alias lock='gnome-screensaver-command -l'
+fi
 
- gnome-screensaver-command -l
+#shutdown
+if [ $OS == MAC ]; then
+  alias shutdown='sudo shutdown -r now'
+elif [ $OS == LINUX ]; then
+  alias shutdown='sudo shutdown -h now'
 fi
 
  #reload termianl shell
