@@ -128,7 +128,11 @@ function extract () {
 alias down="cd ~/Downloads";
 alias desk="cd ~/Desktop"
 alias ~="cd ~"
-
+alias .1="cd .."
+alias .2="cd ../../"
+alias .3="cd ../../../"
+alias .4="cd ../../../../"
+alias .5="cd ../../../../../"
 
 ######### Iterm2 shell intergration ####
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
