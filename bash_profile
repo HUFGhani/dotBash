@@ -98,10 +98,11 @@ alias home='ssh pi@raspberrypi2014.x64.me'
 alias sbox='ssh -p2222 hamza@sandbox.dev'
 
 ########### git ######################
-
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
-  fi
+if [ $OS == MAC ];then
+   if [ -f $(brew --prefix)/etc/bash_completion ]; then
+      . $(brew --prefix)/etc/bash_completion
+   fi
+fi
 
 source ~/.bash/git-prompt.sh
 
