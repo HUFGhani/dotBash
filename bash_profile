@@ -2,7 +2,6 @@
 case $( uname -s ) in
 Linux)
     OS="LINUX"
-		gnome-screensaver
     ;;
 Darwin)
     OS="MAC"
