@@ -75,9 +75,9 @@ fi
 
 export CLICOLOR=1
 if [ $OS == MAC ]; then
-export LSCOLORS=CxfxgxdxBxegfdchagacad
+export LSCOLORS="CxfxgxdxBxegfdchagacad"
 elif [ $OS == LINUX ]; then
-export LS_COLORS=di=1;32:ln=35:so=36:pi=33:ex=1;31:bd=34;46:cd=35;43:su=32;47:sg=30;46:tw=30;42:ow=30;43
+export LS_COLORS="di=1;32:ln=35:so=36:pi=33:ex=1;31:bd=34;46:cd=35;43:su=32;47:sg=30;46:tw=30;42:ow=30;43"
 fi
 
 # Custom bash prompt via kirsle.net/wizards/ps1.html
