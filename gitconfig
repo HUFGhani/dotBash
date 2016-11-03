@@ -9,3 +9,5 @@
   br = branch
   up = pull
 	
+[core]
+	excludesfile = /Users/hamzaghani/.bash/gitignore_global

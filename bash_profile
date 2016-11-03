@@ -57,6 +57,12 @@ elif [ $OS == LINUX ]; then
   alias shutdown='sudo shutdown -h now'
 fi
 
+
+#Tomcat
+alias tomcatStart='sudo /usr/local/Cellar/tomcat/8.5.5/libexec/bin/startup.sh'
+
+alias tomcatStop='sudo /usr/local/Cellar/tomcat/8.5.5/libexec/bin/shutdown.sh'
+
  #reload termianl shell
  alias reload='source ~/.bash_profile'
 
