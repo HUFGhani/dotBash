@@ -58,6 +58,8 @@ elif [ $OS == LINUX ]; then
 fi
 
 
+alias mysqlStart="mysql.server start"
+
 #Tomcat
 alias tomcatStart='sudo /usr/local/Cellar/tomcat/8.5.5/libexec/bin/startup.sh'
 
