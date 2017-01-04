@@ -23,9 +23,11 @@ function setjdk() {
    if [ -n "${JAVA_HOME+x}" ]; then
     removeFromPath $JAVA_HOME
    fi
+  fi
    export JAVA_HOME=`/usr/libexec/java_home -v $@`
    export PATH=$JAVA_HOME/bin:$PATH
    elif [ $OS == LINUX ]; then
+     if [ $# -ne 0 ]; then
      removeFromPath '/System/Library/Frameworks/JavaVM.framework/Home/bin'
      if [ -n "${JAVA_HOME+x}" ]; then
       removeFromPath $JAVA_HOME
@@ -33,7 +35,7 @@ function setjdk() {
      export JAVA_HOME=`/usr/lib/jvm/java-$@-oracle/jre/bin/java`
      export PATH=$JAVA_HOME/bin:$PATH
   fi
-fi 
+fi
  }
  function removeFromPath() {
   export PATH=$(echo $PATH | sed -E -e "s;:$1;;" -e "s;$1:?;;")
