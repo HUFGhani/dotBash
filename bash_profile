@@ -18,7 +18,6 @@ export EDITOR=vim
 
 function setjdk() {
   if [ $OS == MAC ]; then
-<<<<<<< HEAD
     if [ $# -ne 0 ]; then
       removeFromPath '/System/Library/Frameworks/JavaVM.framework/Home/bin'
       if [ -n "${JAVA_HOME+x}" ]; then
@@ -27,26 +26,7 @@ function setjdk() {
       export JAVA_HOME=`/usr/libexec/java_home -v $@`
       export PATH=$JAVA_HOME/bin:$PATH
     fi
-=======
-  if [ $# -ne 0 ]; then
-   removeFromPath '/System/Library/Frameworks/JavaVM.framework/Home/bin'
-   if [ -n "${JAVA_HOME+x}" ]; then
-    removeFromPath $JAVA_HOME
-   fi
   fi
-   export JAVA_HOME=`/usr/libexec/java_home -v $@`
-   export PATH=$JAVA_HOME/bin:$PATH
-   elif [ $OS == LINUX ]; then
-     if [ $# -ne 0 ]; then
-     removeFromPath '/usr/lib/jvm/java*'
-     if [ -n "${JAVA_HOME+x}" ]; then
-      removeFromPath $JAVA_HOME
-     fi
-     export JAVA_HOME=`/usr/lib/jvm/java-$@-oracle`
-     export PATH=$JAVA_HOME/bin:$PATH
->>>>>>> 20374f1822892b1d76ee080a3e3e48dda00c7a95
-  fi
-fi
  }
  function removeFromPath() {
   export PATH=$(echo $PATH | sed -E -e "s;:$1;;" -e "s;$1:?;;")
