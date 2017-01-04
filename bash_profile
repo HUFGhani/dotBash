@@ -32,7 +32,7 @@ function setjdk() {
      if [ -n "${JAVA_HOME+x}" ]; then
       removeFromPath $JAVA_HOME
      fi
-     export JAVA_HOME=`/usr/lib/jvm/java-$@-oracle/jre/bin/java`
+     export JAVA_HOME=`/usr/lib/jvm/java-$@-oracle/jre/bin/`
      export PATH=$JAVA_HOME/bin:$PATH
   fi
 fi
