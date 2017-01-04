@@ -17,6 +17,7 @@ export EDITOR=vim
 #export JAVA_HOME="$(/usr/libexec/java_home)"
 
 function setjdk() {
+  : "${UJA:=update-java-alternatives}"
   if [ $OS == MAC ]; then
     if [ $# -ne 0 ]; then
       removeFromPath '/System/Library/Frameworks/JavaVM.framework/Home/bin'
@@ -26,6 +27,21 @@ function setjdk() {
       export JAVA_HOME=`/usr/libexec/java_home -v $@`
       export PATH=$JAVA_HOME/bin:$PATH
     fi
+  elif [ $OS == LINUX ]; then
+    case "$@" in
+         1.6)
+         sudo "${UJA}" --set "java-6-oracle"
+         export JAVA_HOME="/usr/lib/jvm/java-6-oracle"
+         ;;
+         1.7)
+          sudo "${UJA}" --set "java-7-oracle"
+          export JAVA_HOME="/usr/lib/jvm/java-7-oracle"
+         ;;
+         1.8)
+         sudo "${UJA}" --set "java-8-oracle"
+         export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
+         ;;
+       esac
   fi
  }
  function removeFromPath() {
