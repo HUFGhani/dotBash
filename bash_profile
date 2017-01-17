@@ -123,7 +123,6 @@
   alias home='ssh pi@raspberrypi2014.x64.me'
 
   alias sbox='ssh -p2222 hamza@sandbox.dev'
-
   ########### git ######################
   if [ $OS == MAC ];then
      if [ -f $(brew --prefix)/etc/bash_completion ]; then
@@ -168,6 +167,9 @@
   alias .4="cd ../../../../"
   alias .5="cd ../../../../../"
 
+
+  alias startqbit='sudo systemctl start qbittorrent'
+  alias stopqbit='sudo systemctl stop qbittorrent'
   ######### Iterm2 shell intergration ####
 if [ $OS == MAC ]; then
   test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
