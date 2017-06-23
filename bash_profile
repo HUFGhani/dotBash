@@ -176,8 +176,6 @@ if [ $OS == MAC ]; then
   test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 fi
 
-
-
 if [ $OS == LINUX  ]; then
 	export PATH="$HOME/.linuxbrew/bin:$PATH"
 fi
@@ -192,4 +190,3 @@ nestget(){
 youtube-mp3(){
     youtube-dl -x --audio-format mp3 $1
 }
-
