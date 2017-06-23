@@ -1,4 +1,5 @@
-  ########### WHICH OS ###################
+PATH=$PATH:/usr/local/sbin
+########### WHICH OS ###################
   case $( uname -s ) in
   Linux)
       OS="LINUX"
@@ -168,7 +169,27 @@
   alias .4="cd ../../../../"
   alias .5="cd ../../../../../"
 
+  alias network="arp -a"
+  alias mosquitto="mosquitto -c /usr/local/Cellar/mosquitto/1.4.10_1/etc/mosquitto/mosquitto.conf"
   ######### Iterm2 shell intergration ####
 if [ $OS == MAC ]; then
   test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 fi
+
+
+
+if [ $OS == LINUX  ]; then
+	export PATH="$HOME/.linuxbrew/bin:$PATH"
+fi
+
+nestset() {
+curl -L -X PUT "https://developer-api.nest.com/devices/thermostats/0KD654moZP0wgM2qlRxQxFcNidHWg5j2/target_temperature_c?auth=c.qOL8PQR370XkE3F2oQbSSIwBENrVMYN1DhAQJRpmxDnuzd23e2Z0Ru4fsUKgzc20pHbBkhumPXp9qgwNUJuNJXSeif7ByD2SpcHRiEoX2sNecb7SvwmK3d1X91JGwJxRxMl2fTvDa3m3aa1W" -H "Content-Type: application/json" -d "$1"
+}
+nestget(){
+  curl -L -X GET "https://developer-api.nest.com/devices/thermostats/0KD654moZP0wgM2qlRxQxFcNidHWg5j2/target_temperature_c?auth=c.qOL8PQR370XkE3F2oQbSSIwBENrVMYN1DhAQJRpmxDnuzd23e2Z0Ru4fsUKgzc20pHbBkhumPXp9qgwNUJuNJXSeif7ByD2SpcHRiEoX2sNecb7SvwmK3d1X91JGwJxRxMl2fTvDa3m3aa1W"
+}
+
+youtube-mp3(){
+    youtube-dl -x --audio-format mp3 $1
+}
+
