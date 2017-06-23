@@ -124,7 +124,6 @@ PATH=$PATH:/usr/local/sbin
   alias home='ssh pi@raspberrypi2014.x64.me'
 
   alias sbox='ssh -p2222 hamza@sandbox.dev'
-
   ########### git ######################
   if [ $OS == MAC ];then
      if [ -f $(brew --prefix)/etc/bash_completion ]; then
@@ -171,6 +170,7 @@ PATH=$PATH:/usr/local/sbin
 
   alias network="arp -a"
   alias mosquitto="mosquitto -c /usr/local/Cellar/mosquitto/1.4.10_1/etc/mosquitto/mosquitto.conf"
+
   ######### Iterm2 shell intergration ####
 if [ $OS == MAC ]; then
   test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
