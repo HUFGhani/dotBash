@@ -168,8 +168,13 @@ PATH=$PATH:/usr/local/sbin
   alias .4="cd ../../../../"
   alias .5="cd ../../../../../"
 
+  ######## Network connection #########  
   alias network="arp -a"
-  alias mosquitto="mosquitto -c /usr/local/Cellar/mosquitto/1.4.10_1/etc/mosquitto/mosquitto.conf"
+
+  ####### System update && upgrade ######
+  alias update="brew update"
+  alias upgrade="brew upgrade"
+
 
   ######### Iterm2 shell intergration ####
 if [ $OS == MAC ]; then
@@ -183,3 +188,4 @@ fi
 youtube-mp3(){
     youtube-dl -x --audio-format mp3 $1
 }
+
