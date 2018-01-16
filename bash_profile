@@ -53,6 +53,10 @@ PATH=$PATH:/usr/local/sbin
      java -version
    }
 
+#node and npm version switcher 
+   export NVM_DIR=~/.nvm
+   source $(brew --prefix nvm)/nvm.sh
+
   if [ $OS == MAC ]; then
    #cleanupDS:  Recursively delete .DS_Store files
    alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
@@ -171,7 +175,7 @@ PATH=$PATH:/usr/local/sbin
   ######## Network connection #########  
   alias network="arp -a"
 
-  ####### System update && upgrade ######
+  ####### brew update && upgrade ######
   alias update="brew update"
   alias upgrade="brew upgrade"
 
@@ -188,4 +192,3 @@ fi
 youtube-mp3(){
     youtube-dl -x --audio-format mp3 $1
 }
-
