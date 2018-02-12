@@ -192,3 +192,7 @@ fi
 youtube-mp3(){
     youtube-dl -x --audio-format mp3 $1
 }
+
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
