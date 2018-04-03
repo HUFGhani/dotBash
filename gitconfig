@@ -10,6 +10,6 @@
   up = pull
 	
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = /Users/hamzaghani/.gitignore_global
 [credential]
 	helper = osxkeychain

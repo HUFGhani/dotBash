@@ -53,9 +53,16 @@ PATH=$PATH:/usr/local/sbin
      java -version
    }
 
-#node and npm version switcher 
-   export NVM_DIR=~/.nvm
-   source $(brew --prefix nvm)/nvm.sh
+#node and npm version switcher
+   if [ $OS == MAC ]; then
+   	export NVM_DIR=~/.nvm
+   	source $(brew --prefix nvm)/nvm.sh
+   elif [ $OS == LINUX ]; then
+	export NVM_DIR="$HOME/.nvm"
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+        [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+   fi
+
 
   if [ $OS == MAC ]; then
    #cleanupDS:  Recursively delete .DS_Store files
@@ -125,7 +132,7 @@ PATH=$PATH:/usr/local/sbin
   ############# SSH ###################
   alias pi='ssh pi@192.168.0.19'
 
-  alias home='ssh pi@raspberrypi2014.x64.me'
+  alias home='ssh pi@raspberrypi2018.ddns.net'
 
   alias sbox='ssh -p2222 hamza@sandbox.dev'
   ########### git ######################
