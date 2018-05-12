@@ -1,4 +1,5 @@
 PATH=$PATH:/usr/local/sbin
+export MAVEN_OPTS=-Xmx1024m
 ########### WHICH OS ###################
   case $( uname -s ) in
   Linux)
