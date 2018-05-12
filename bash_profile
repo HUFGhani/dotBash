@@ -184,9 +184,11 @@ export MAVEN_OPTS=-Xmx1024m
   alias network="arp -a"
 
   ####### brew update && upgrade ######
-  alias update="brew update"
-  alias upgrade="brew upgrade"
-
+ if [ $OS == MAC  ]; then
+     alias update="brew update && brew upgrade"
+ elif [ $OS == LINUX  ]; then
+    alias update="sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade"
+ fi
 
   ######### Iterm2 shell intergration ####
 if [ $OS == MAC ]; then
@@ -204,3 +206,5 @@ youtube-mp3(){
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+export PATH="$HOME/.cargo/bin:$PATH"
